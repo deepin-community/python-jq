@@ -1,0 +1,38 @@
+From: Tianyu Chen <billchenchina2001@gmail.com>
+Date: Wed, 8 Jul 2026 15:19:47 +0800
+Subject: Relax tests with jq 1.8.2
+Forwarded: https://github.com/mwilliamson/jq.py/pull/131
+
+---
+ tests/jq_old_tests.py | 3 +--
+ tests/jq_tests.py     | 3 +--
+ 2 files changed, 2 insertions(+), 4 deletions(-)
+
+diff --git a/tests/jq_old_tests.py b/tests/jq_old_tests.py
+index 794eed3..fc80b94 100644
+--- a/tests/jq_old_tests.py
++++ b/tests/jq_old_tests.py
+@@ -95,8 +95,7 @@ def test_value_error_is_raised_if_input_cannot_be_processed_by_program():
+         program.transform(1)
+         assert False, "Expected error"
+     except ValueError as error:
+-        expected_error_str = "Cannot index number with string \"x\""
+-        assert_equal(str(error), expected_error_str)
++        assert "Cannot index number with string" in str(error)
+ 
+ 
+ def test_errors_do_not_leak_between_transformations():
+diff --git a/tests/jq_tests.py b/tests/jq_tests.py
+index 1c45472..9862c09 100644
+--- a/tests/jq_tests.py
++++ b/tests/jq_tests.py
+@@ -215,8 +215,7 @@ def test_value_error_is_raised_if_input_cannot_be_processed_by_program():
+         program.input(1).all()
+         assert False, "Expected error"
+     except ValueError as error:
+-        expected_error_str = "Cannot index number with string \"x\""
+-        assert_equal(str(error), expected_error_str)
++        assert "Cannot index number with string" in str(error)
+ 
+ 
+ def test_non_string_error_is_converted_to_json_text():
