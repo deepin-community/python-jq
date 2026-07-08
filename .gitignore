@@ -1,0 +1,9 @@
+*.pyc
+/_virtualenv
+/build
+/jq.c
+/jq.so
+/.tox
+/*.egg-info
+/_deps
+/deps/_build
