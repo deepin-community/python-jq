@@ -1,3 +1,12 @@
+python-jq (1.12.0-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream version 1.12.0
+  * Drop 0002-Relax-tests-with-jq-1.8.2.patch, upstream fixed it in 1.12.0.
+  * Refresh patches.
+
+ -- Tianyu Chen <billchenchina2001@gmail.com>  Tue, 14 Jul 2026 20:49:54 +0800
+
 python-jq (1.11.0-2) unstable; urgency=medium
 
   * Team upload.

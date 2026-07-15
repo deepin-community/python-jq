@@ -25,7 +25,7 @@ index 123c0c3..a02bae6 100644
 -test-requires = "-r test-requirements.txt"
 -test-command = "pytest {project}/tests"
 diff --git a/setup.py b/setup.py
-index c79e917..266eb2f 100644
+index 82df188..49eacb5 100644
 --- a/setup.py
 +++ b/setup.py
 @@ -1,140 +1,17 @@
@@ -59,8 +59,8 @@ index c79e917..266eb2f 100644
 -    return open(os.path.join(os.path.dirname(__file__), fname)).read()
 -
 -
--jq_lib_tarball_path = _dep_source_path("jq-1.8.1.tar.gz")
--jq_lib_dir = _dep_build_path("jq-1.8.1")
+-jq_lib_tarball_path = _dep_source_path("jq-1.8.2.tar.gz")
+-jq_lib_dir = _dep_build_path("jq-1.8.2")
 -
 -class jq_with_deps_build_ext(build_ext):
 -    def finalize_options(self):
@@ -158,7 +158,7 @@ index c79e917..266eb2f 100644
  
  setup(
      name='jq',
-     version='1.11.0',
+     version='1.12.0',
      description='jq is a lightweight and flexible JSON processor.',
 -    long_description=_read("README.rst"),
 +    long_description=open("README.rst").read(),
